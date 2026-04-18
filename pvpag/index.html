@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1FJT8P9XD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F1FJT8P9XD');
+    </script>
+    <!-- End Google tag (gtag.js) -->
+    
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Site 100% Seguro</title>
+    <link href="css/styles.css" rel="stylesheet"/>
+    <link href="css/all.min.css" rel="stylesheet"/>
+    <script src="js/track.js" type="text/javascript"></script>
+    <style>
+        /* New style for the fixed golden bar */
+        .black-friday-bar {
+            background: linear-gradient(145deg, #F0AC41 0%, #d4941f 100%);
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 1.1em;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            border-bottom: 3px solid #b8801a;
+            box-shadow: 0 3px 15px rgba(240, 172, 65, 0.5);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* Adjust the body to avoid overlap with the bar */
+        body {
+            margin-top: 25px;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px;
+            background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            text-align: center;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 400px;
+            border: 2px solid #F0AC41;
+        }
+        .popup p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #333;
+        }
+        .popup button {
+            padding: 8px 16px;
+            background: linear-gradient(145deg, #F0AC41 0%, #d4941f 100%);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 1em;
+            box-shadow: 0 2px 8px rgba(240, 172, 65, 0.4);
+            font-weight: bold;
+        }
+        .popup button:hover {
+            background: linear-gradient(145deg, #d4941f 0%, #b8801a 100%);
+        }
+        .popup .close {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            background: transparent;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #F0AC41;
+            font-weight: bold;
+        }
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(240, 172, 65, 0.3);
+            z-index: 999;
+        }
+
+        .guarantee-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 25px;
+            padding: 20px 25px;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+            box-shadow: 0 4px 20px rgba(240, 172, 65, 0.2);
+            border: 3px solid #F0AC41;
+            text-align: center;
+        }
+
+        .guarantee-text {
+            text-align: center;
+        }
+
+        .guarantee-text h3 {
+            margin: 0 0 8px;
+            color: #2c2c2c;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .guarantee-text p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .guarantee-icon {
+            font-size: 5em;
+            color: #F0AC41;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            .guarantee-box {
+                text-align: center;
+                margin-top: 15px;
+                padding: 20px 15px;
+            }
+            .guarantee-text {
+                max-width: 100%;
+                margin-bottom: 8px;
+            }
+            .guarantee-icon {
+                font-size: 4em;
+                margin: 15px 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                line-height: 1;
+            }
+            .review-section {
+                margin-top: 20px;
+            }
+            .review-section h2 {
+                margin-bottom: 12px;
+                font-size: 1.3em;
+            }
+            .review {
+                padding: 8px;
+                margin-bottom: 6px;
+            }
+            .faq-section {
+                margin-top: 20px;
+                padding-bottom: 45px;
+            }
+            .faq-section h2 {
+                margin-bottom: 12px;
+                font-size: 1.3em;
+            }
+            .faq {
+                padding: 8px;
+                margin-bottom: 6px;
+            }
+            .community-section {
+                margin-top: 20px;
+            }
+            .community-section h2 {
+                margin-bottom: 12px;
+                font-size: 1.3em;
+            }
+            .community-map {
+                padding: 12px;
+            }
+            .offer-item {
+                margin-bottom: 6px;
+            }
+            .offer-summary {
+                padding: 6px;
+            }
+            .offer-details {
+                padding: 6px;
+            }
+            .fixed-discount {
+                padding: 6px 0;
+            }
+            .discount-timer {
+                margin-right: 12px;
+                font-size: 0.9em;
+            }
+            .get-plan {
+                padding: 6px 12px;
+                font-size: 0.9em;
+            }
+        }
+
+        .fixed-discount {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(145deg, #ffffff 0%, #fefcf7 100%);
+            border-top: 3px solid #F0AC41;
+            padding: 10px 0;
+            justify-content: center;
+            z-index: 1000;
+            box-shadow: 0 -4px 20px rgba(240, 172, 65, 0.4);
+        }
+
+        .discount-timer {
+            font-size: 1em;
+            margin-right: 15px;
+            color: #8b6914;
+            font-weight: 500;
+        }
+
+        .discount-timer span {
+            font-weight: bold;
+            color: #F0AC41;
+            text-shadow: 1px 1px 2px rgba(240, 172, 65, 0.3);
+        }
+
+        .get-plan {
+            background: linear-gradient(145deg, #F0AC41 0%, #d4941f 100%);
+            color: #5d4a0e;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            animation: pulse 2s infinite;
+            box-shadow: 0 2px 8px rgba(240, 172, 65, 0.4);
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+        }
+
+        .get-plan:hover {
+            background: linear-gradient(145deg, #d4941f 0%, #b8801a 100%);
+            color: #4a3a0b;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(240, 172, 65, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(240, 172, 65, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(240, 172, 65, 0);
+            }
+        }
+
+        .review-section {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .review-section h2 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            color: #2c2c2c;
+            font-weight: bold;
+        }
+
+        .review {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        .review img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-right: 12px;
+            border: 2px solid #ddd;
+        }
+
+        .review .review-text {
+            text-align: left;
+        }
+
+        .review .review-text h4 {
+            margin: 0;
+            font-size: 1em;
+            color: #2c2c2c;
+            font-weight: bold;
+        }
+
+        .review .review-text p {
+            margin: 3px 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .faq-section {
+            margin-top: 25px;
+            text-align: left;
+            padding-bottom: 50px;
+        }
+
+        .faq-section h2 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            color: #2c2c2c;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .faq {
+            background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        .faq h3 {
+            margin: 0;
+            font-size: 1em;
+            color: #2c2c2c;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .faq p {
+            margin: 8px 0 0;
+            font-size: 0.9em;
+            color: #555;
+            display: none;
+        }
+
+        .faq.open p {
+            display: block;
+        }
+
+        .community-section {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .community-section h2 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            color: #2c2c2c;
+            font-weight: bold;
+        }
+
+        .community-map {
+            background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ddd;
+        }
+
+        .community-map img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .offer-item {
+            border: 2px solid #F0AC41;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+            background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
+        }
+
+        .offer-item:hover {
+            box-shadow: 0 4px 15px rgba(240, 172, 65, 0.3);
+        }
+
+        .offer-summary {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            justify-content: space-between;
+        }
+
+        .offer-summary .image img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-left: 12px;
+            border: 1px solid #F0AC41;
+        }
+
+        .offer-summary .summary-text {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .offer-summary .summary-text h3 {
+            margin: 0;
+            font-size: 1.1em;
+            color: #2c2c2c;
+            font-weight: bold;
+        }
+
+        .offer-summary .summary-text .weekly-price {
+            font-weight: bold;
+            color: #2c2c2c;
+        }
+
+        .offer-summary .summary-text .old-price {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .offer-summary .summary-text .new-price {
+            color: #F0AC41;
+            font-size: 1.1em;
+        }
+
+        .offer-summary i {
+            font-size: 1.2em;
+            color: #F0AC41;
+        }
+
+        .offer-details {
+            display: none;
+            padding: 8px;
+            background: linear-gradient(145deg, #f8f8f8 0%, #eeeeee 100%);
+            text-align: left;
+            border-top: 1px solid #F0AC41;
+        }
+
+        .offer-details p {
+            margin: 4px 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .offer-details .highlight-text {
+            font-weight: bold;
+            color: #F0AC41;
+        }
+
+        .offer-details label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 8px;
+            padding: 8px;
+            background: linear-gradient(145deg, #F0AC41 0%, #d4941f 100%);
+            color: #5d4a0e;
+            border-radius: 6px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(240, 172, 65, 0.4);
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+        }
+
+        .offer-details label input {
+            margin-right: 8px;
+        }
+
+        .offer-details.open {
+            display: block;
+        }
+
+        .saiba-mais-btn {
+            display: inline-block;
+            font-size: 0.7em;
+            padding: 2px 5px;
+            border: 1px solid #ddd;
+            color: #555;
+            background-color: transparent;
+            border-radius: 4px;
+            margin-top: 4px;
+            cursor: pointer;
+        }
+
+        .saiba-mais-btn:hover {
+            background: linear-gradient(145deg, #F0AC41 0%, #d4941f 100%);
+            color: #5d4a0e;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+        }
+
+        .offer-item.open .saiba-mais-btn {
+            display: none;
+        }
+    </style>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F7E1S9FRCZ"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F7E1S9FRCZ');
+    </script>
+<script>
+        let tentativa = 0;
+
+        // Função para adicionar parâmetros de URL a um link
+        function addUrlParamsToLink(originalLink) {
+            var urlParams = document.location.search.replace('?', '').toString();
+            if (urlParams) {
+                return originalLink + (originalLink.indexOf("?") > 0 ? '&' : '?') + urlParams;
+            }
+            return originalLink;
+        }
+
+        // Função para selecionar oferta diretamente
+        function selectOffer(element, link) {
+            // Desmarcar todas as outras ofertas
+            document.querySelectorAll('.offer-item-simple').forEach(item => {
+                item.classList.remove('selected');
+                const radio = item.querySelector('.offer-radio');
+                if (radio) radio.checked = false;
+            });
+            
+            // Marcar a oferta selecionada
+            element.classList.add('selected');
+            const radio = element.querySelector('.offer-radio');
+            if (radio) {
+                radio.checked = true;
+                // Adicionar parâmetros de URL ao link
+                const linkWithParams = addUrlParamsToLink(link);
+                radio.setAttribute('data-link', linkWithParams);
+            }
+            
+            // Atualizar o texto do botão fixo para "PEDIR"
+            const fixedButton = document.querySelector('.get-plan');
+            if (fixedButton) {
+                fixedButton.textContent = 'PEDIR';
+            }
+        }
+
+        function redirecionar() {
+            const selectedRadio = document.querySelector('.offer-radio:checked');
+            if (selectedRadio) {
+                const link = selectedRadio.getAttribute('data-link');
+                window.location.href = link;
+            } else {
+                tentativa++;
+                mostrarPopup(1);
+            }
+        }
+
+        function mostrarPopup(popupNumber) {
+            document.querySelector('.popup-overlay').style.display = 'block';
+            document.querySelector('#popup' + popupNumber).style.display = 'block';
+        }
+
+        function fecharPopup() {
+            document.querySelector('.popup-overlay').style.display = 'none';
+            document.querySelector('#popup1').style.display = 'none';
+        }
+
+        // Script para adicionar parâmetros nos links
+        window.onload = function () {
+            // Função para adicionar parâmetros de URL a um link
+            function addUrlParams(originalLink) {
+                var urlParams = document.location.search.replace('?', '').toString();
+                if (urlParams) {
+                    return originalLink + (originalLink.indexOf("?") > 0 ? '&' : '?') + urlParams;
+                }
+                return originalLink;
+            }
+
+            // Adicionar parâmetros de URL aos links dos radio buttons
+            var offers = document.querySelectorAll('.offer-radio');
+            offers.forEach(offer => {
+                var originalLink = offer.getAttribute('data-link').trim();
+                var linkWithParams = addUrlParams(originalLink);
+                offer.setAttribute('data-link', linkWithParams);
+            });
+
+            // Adicionar parâmetros de URL aos elementos com onclick
+            var offerElements = document.querySelectorAll('.offer-item-simple');
+            offerElements.forEach(element => {
+                var onclickAttr = element.getAttribute('onclick');
+                if (onclickAttr) {
+                    // Extrair o link do onclick
+                    var linkMatch = onclickAttr.match(/'([^']+)'/);
+                    if (linkMatch) {
+                        var originalLink = linkMatch[1];
+                        var linkWithParams = addUrlParams(originalLink);
+                        
+                        // Atualizar o onclick com o novo link
+                        var newOnclick = onclickAttr.replace(originalLink, linkWithParams);
+                        element.setAttribute('onclick', newOnclick);
+                    }
+                }
+            });
+
+            startTimer(300, 'timer'); // Inicializa o timer com 5 minutos (300 segundos)
+            updateFixedButtonText(); // Atualiza o texto do botão fixo
+        }
+
+        // Função para atualizar o texto do botão fixo baseado no estado das ofertas
+        function updateFixedButtonText() {
+            const selectedRadio = document.querySelector('.offer-radio:checked');
+            const fixedButton = document.querySelector('.get-plan');
+            if (fixedButton) {
+                if (selectedRadio) {
+                    fixedButton.textContent = 'PEDIR';
+                } else {
+                    fixedButton.textContent = 'SELECIONAR';
+                }
+            }
+        }
+
+        // Função para alternar a exibição das FAQs
+        function toggleFaq(faqElement) {
+            faqElement.classList.toggle('open');
+        }
+
+        // Função para iniciar o timer de contagem regressiva
+        function startTimer(duration, elementId) {
+            let timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                const timeString = minutes + ":" + seconds;
+                document.getElementById(elementId).textContent = timeString;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+
+
+        // Função para rolar até as ofertas ou redirecionar se oferta selecionada
+        function scrollToOffers() {
+            const selectedRadio = document.querySelector('.offer-radio:checked');
+            if (selectedRadio) {
+                // Se há uma oferta selecionada, redirecionar
+                redirecionar();
+            } else {
+                // Se não há oferta selecionada, rolar até as ofertas
+                const offersSection = document.querySelector('.offer-item-simple');
+                if (offersSection) {
+                    offersSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    document.querySelector('.container').scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container" style="margin-top: 5px;">
+<div class="professional-badge" style="color: #5d4a0e;">Seiva Amazônica - Produto Nº1 para Aumento</div>
+<div class="shipping">
+<label>
+<input checked="" disabled="" name="frete" type="radio"/>
+                🚚 Frete: selecione nessa página
+            </label>
+</div>
+<div class="product-benefits">
+<div class="benefits-title">✨ Benefícios Comprovados ✨</div>
+<div class="benefit-item">
+<i class="fas fa-chart-line"></i>
+<span>+7cm de comprimento e +3cm de grossura</span>
+</div>
+<div class="benefit-item">
+<i class="fas fa-clock"></i>
+<span>Duração de até 6 horas de relação sexual</span>
+</div>
+<div class="benefit-item">
+<i class="fas fa-hammer"></i>
+<span>Ereções mais duras e firmes</span>
+</div>
+<div class="benefit-item">
+<i class="fas fa-fire"></i>
+<span>Aumento significativo da libido</span>
+</div>
+</div>
+<div style="text-align: center; margin: 20px 0;">
+<img alt="Resultados 10 Amostras" src="images/10AM.png" style="max-width: 100%; height: auto; border-radius: 8px;"/>
+</div>
+<h2>Escolha sua quantidade</h2>
+<div class="professional-note">
+<i class="fas fa-check-circle"></i>
+<span>Clique na quantidade desejada para selecionar automaticamente</span>
+</div>
+<div class="offer-item-simple" onclick="selectOffer(this, 'https://go.sharkpayments.com.br/uiupnjiikq')">
+<div class="offer-content">
+<div class="offer-image">
+<img alt="1 Amostra" src="images/image1.png"/>
+</div>
+<div class="offer-info">
+<h3>1 AMOSTRA</h3>
+<p class="old-price">R$ 29,90/unidade</p>
+<p class="new-price">R$ 29,90</p>
+</div>
+<div class="offer-action">
+<input class="offer-radio" data-link="https://go.sharkpayments.com.br/uiupnjiikq" name="offer" type="radio"/>
+<span class="select-text">SELECIONAR</span>
+</div>
+</div>
+</div>
+<div class="offer-item-simple popular" onclick="selectOffer(this, 'https://go.sharkpayments.com.br/9s8e6aaalc')">
+<div class="popular-badge">MAIS POPULAR</div>
+<div class="offer-content">
+<div class="offer-image">
+<img alt="3 Amostras" src="images/image3.png"/>
+</div>
+<div class="offer-info">
+<h3>3 AMOSTRAS</h3>
+<p class="old-price">R$ 26,66/unidade</p>
+<p class="new-price">R$ 79,99</p>
+</div>
+<div class="offer-action">
+<input class="offer-radio" data-link="https://go.sharkpayments.com.br/kmt2bhzkfg" name="offer" type="radio"/>
+<span class="select-text">SELECIONAR</span>
+</div>
+</div>
+</div>
+<div class="offer-item-simple" onclick="selectOffer(this, 'https://go.sharkpayments.com.br/gcgkfkqrqz')">
+<div class="offer-content">
+<div class="offer-image">
+<img alt="5 Amostras" src="images/image5.png"/>
+</div>
+<div class="offer-info">
+<h3>5 AMOSTRAS</h3>
+<p class="old-price">R$ 25,84/unidade</p>
+<p class="new-price">R$ 129,22</p>
+</div>
+<div class="offer-action">
+<input class="offer-radio" data-link="https://go.sharkpayments.com.br/gcgkfkqrqz" name="offer" type="radio"/>
+<span class="select-text">SELECIONAR</span>
+</div>
+</div>
+</div>
+<div class="offer-item-simple best-value" onclick="selectOffer(this, 'https://go.sharkpayments.com.br/9s8e6aaalc')">
+<div class="best-value-badge">MELHOR OFERTA</div>
+<div class="offer-content">
+<div class="offer-image">
+<img alt="10 Amostras" src="images/10.png"/>
+</div>
+<div class="offer-info">
+<h3>10 AMOSTRAS</h3>
+<p class="old-price">R$ 18,75/unidade</p>
+<p class="new-price">R$ 187,50</p>
+<p class="savings">Economize R$ 111,50</p>
+</div>
+<div class="offer-action">
+<input class="offer-radio" data-link="https://go.sharkpayments.com.br/9s8e6aaalc" name="offer" type="radio"/>
+<span class="select-text">SELECIONAR</span>
+</div>
+</div>
+</div>
+<button class="continue" onclick="redirecionar()">GARANTIR OFERTA AGORA!</button>
+<div class="guarantee-box">
+<div class="guarantee-icon">
+<i class="fas fa-award"></i>
+</div>
+<div class="guarantee-text">
+<h3>Garantia Total de 30 Dias</h3>
+<p>Experimente a Seiva Amazônica sem riscos! Se não ficar 100% satisfeito com os resultados em 30 dias, devolvemos todo o seu dinheiro. Nossa confiança no produto é total.</p>
+</div>
+</div>
+<div class="review-section">
+<h2>Junte-se a um milhão de usuários felizes</h2>
+<div class="review">
+<img alt="Usuário" src="images/user1.jpg"/>
+<div class="review-text">
+<h4>Marcos P.</h4>
+<p>A Seiva Amazônica mudou minha vida. Minha confiança aumentou e me sinto mais jovem. 😎</p>
+</div>
+</div>
+<div class="review">
+<img alt="Usuário" src="images/user2.jpg"/>
+<div class="review-text">
+<h4>José S.</h4>
+<p>Os resultados foram incríveis. Eu recomendo a Seiva Amazônica para todos. 😍</p>
+</div>
+</div>
+<div class="review">
+<img alt="Usuário" src="images/user3.jpg"/>
+<div class="review-text">
+<h4>Everaldo A.</h4>
+<p>Minha performance melhorou drasticamente. Seiva Amazônica é fantástica. 😉</p>
+</div>
+</div>
+</div>
+<div class="community-section">
+<h2>Junte-se à mais de 1 milhão de homens com RESULTADOS REAIS</h2>
+<div class="community-map">
+<img alt="+7CM" src="images/result.jpeg"/>
+<p>+6,7 cm é a média de aumento dos nossos clientes</p>
+</div>
+</div>
+<div class="faq-section">
+<h2>Tem perguntas?</h2>
+<div class="faq" onclick="toggleFaq(this)">
+<h3>A Seiva Amazônica faz mal para o coração? <i class="fas fa-chevron-down"></i></h3>
+<p>A Seiva Amazônica é um suplemento natural e seguro para o coração.</p>
+</div>
+<div class="faq" onclick="toggleFaq(this)">
+<h3>A Seiva Amazônica tem registro na ANVISA? <i class="fas fa-chevron-down"></i></h3>
+<p>Sim, a Seiva Amazônica é registrada na ANVISA, garantindo sua qualidade e segurança.</p>
+</div>
+<div class="faq" onclick="toggleFaq(this)">
+<h3>Quanto tempo leva para chegar? <i class="fas fa-chevron-down"></i></h3>
+<p>O tempo de entrega da Seiva Amazônica varia de acordo com a sua localização, a postagem ocorre geralmente de 3 a 10 dias úteis.
+A entrega é realizada pelos Correios ou transportadora da região.</p>
+</div>
+<div class="faq" onclick="toggleFaq(this)">
+<h3>Como devo usar a Seiva Amazônica? <i class="fas fa-chevron-down"></i></h3>
+<p>Recomendamos 2 doses de Seiva Amazônica por dia, que podem ser ingeridas pela manhã e noite.</p>
+</div>
+</div>
+</div>
+<div class="fixed-discount">
+<div class="discount-timer">
+<span style="color: #424242; font-weight: bold;">Oferta disponível:</span>
+<span id="timer" style="color: #424242; font-weight: bold;">05:00</span>
+</div>
+<button class="get-plan" onclick="scrollToOffers()">SELECIONAR</button>
+</div>
+<div class="popup-overlay"></div>
+<div class="popup" id="popup1">
+<button class="close" onclick="fecharPopup()">×</button>
+<p>Por favor, selecione uma das ofertas antes de continuar.</p>
+<button onclick="fecharPopup()">OK</button>
+</div>
+</body></html>
