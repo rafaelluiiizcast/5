@@ -1,0 +1,200 @@
+<!-- saved from url=(0090)https://pr.wwgo.cc/include_main/sites/PR/_tadal-green/08-adv-zero-2/index_files/index.html --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <style>
+        .unidades {
+            color: black;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .contadorAdv {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-family: "Barlow", sans-serif;
+            max-width: fit-content;
+            font-size: 28px;
+        }
+
+        .contadorMinutos,
+        .contadorSegundos {
+            aspect-ratio: 1/1;
+            width: 55px;
+            font-size: 30px !important;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3px;
+            background: radial-gradient(circle, #bc0606, #aa0808, #980606, #870101);
+            color: #ffffff !important;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .contadorMinutos::before {
+            content: "min";
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 11px;
+            line-height: 11px;
+        }
+
+        .contadorSegundos::before {
+            content: "seg";
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 11px;
+            line-height: 11px;
+        }
+
+        .contadorMensagem {
+            width: 100%;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: "Barlow", sans-serif;
+            border: 1px solid yellow;
+            background: #ffff0040;
+            border-radius: 3px;
+            padding: 4px;
+            color: red;
+        }
+
+        .contadorMensagem h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin: 0;
+            line-height: 20px;
+        }
+
+        .contadorMensagem p {
+            font-size: 14px;
+            line-height: 16px;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .removeMensagem {
+            opacity: 0;
+            display: none;
+        }
+
+        .mostraMensagem {
+            opacity: 1;
+            display: top;
+        }
+
+        .mostraMensagemAnimacao {
+            animation: mensagemAparecendo 0.8s ease;
+        }
+
+        @keyframes mensagemAparecendo {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            75% {
+                transform: scale(0.85);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .cta-contador {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .acabando {
+            letter-spacing: 1px;
+            font-size: 16px !important;
+            color: black !important;
+            font-weight: bold !important;
+            margin: 10px auto !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cta-contador">
+
+        <div class="contadorAdv">
+            <div class="contadorMensagem mostraMensagem mostraMensagemAnimacao" style="display: none;">
+                <h3>CORRA!</h3>
+                <p class="unidades">Restam poucas unidades!</p>
+            </div>
+            <div class="contadorMinutos">03</div>
+            <div class="contadorSegundos">31</div>
+        </div>
+    </div>
+    <script>
+        var contadorAdv = document.querySelectorAll(".contadorAdv");
+
+        contadorAdv.forEach(contadores);
+
+        function contadores(item) {
+
+            var minutosIniciais = 7;
+            // let tempoTotal = 10;
+            var tempoTotal = minutosIniciais * 60;
+
+
+
+
+            var contadorMinutos = item.querySelector(".contadorMinutos");
+            var contadorSegundos = item.querySelector(".contadorSegundos");
+            var contadorMensagem = item.querySelector(".contadorMensagem");
+
+            i = 0;
+
+            var intervalo = setInterval(function () {
+                var minutos = Math.floor(tempoTotal / 60);
+                var segundos = tempoTotal % 60;
+
+                segundos = segundos < 10 ? "0" + segundos : segundos;
+                minutos = minutos < 10 ? "0" + minutos : minutos;
+
+                contadorMinutos.innerHTML = minutos;
+                contadorSegundos.innerHTML = segundos;
+
+                if (tempoTotal <= 0) {
+                    clearInterval(intervalo);
+                    contadorMinutos.style.display = "none";
+                    contadorSegundos.style.display = "none";
+                    contadorMensagem.classList.remove("removeMensagem");
+                    contadorMensagem.classList.add("mostraMensagem");
+                    contadorMensagem.classList.add("mostraMensagemAnimacao");
+                    contadorMensagem.style.display = "";
+                }
+                if (i == contadorAdv.length) {
+                    tempoTotal--;
+                    i = 0;
+                }
+                i++
+            }, 1000);
+
+        }
+    </script>
+
+
+</body></html>
